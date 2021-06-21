@@ -15,6 +15,14 @@ header {
     padding: 0.5em 1.5em 1em 1em;
 }
 
+main {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+/*header*/
+
 .logo {
 
     width: 145px;
@@ -89,11 +97,7 @@ a {
     color: #FFFFFF;
 }
 
-main {
-
-    display: flex;
-    justify-content: space-around;
-}
+/*menu*/
 
 .menu {
     width: fit-content;
@@ -159,7 +163,6 @@ li :hover {
 }
 
 .icon2 {
-
     background-color: #5081FB;
     border-radius: 15px;
     width: 24px;
@@ -169,34 +172,40 @@ li :hover {
     margin-right: 0.3em;
 }
 
+/*editor de código*/
+
+div.code {
+    white-space: pre;
+}
+
 .editor {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
-    display: flex;
-    align-items: center;
     color: blanchedalmond;
-
-
+    outline: 0;
 }
 
-.editor textarea {
-
-    color: blanchedalmond;
-    background-color: black;
-    border:20px solid rgba(107, 209, 255, 100%);
+.editor .code {
+    border: #6BD1FF 1em solid;
+    background-color: #302c34;
     border-radius: 7px;
-    resize: none;
     padding: 1em;
-    outline: 0;
+}
+
+.botoes {
+    display: flex;
+    align-items: flex-end;
 }
 
 .editor button {
     background-color: rgba(80, 129, 251, 0.08);
     color: blanchedalmond;
-    flex-grow: 1;
     margin-top: 1em;
 }
+
+
+/*side bar*/
 
 .sidebar {
 

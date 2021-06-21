@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/dracula.min.css" integrity="sha512-oDvVpANXrKQ6R5B25VO6DooEQWA7jUXleyD6oUWHChC0fjv8wAANSX7lKXtp5D6HbZ7EUxd0wjMibtpCQ+aCDw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 
@@ -55,27 +55,27 @@
                 </li>
             </ul>
         </nav>
-
         <div class="editor">
-            <code>
-                <textarea name="código" cols="100" rows="30" placeholder="const pluckDeep = key => obj => key.split('.').reduce((accum, key) => 
-accum[key], obj) 
-                    
-const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res) 
-                    
-const unfold = (f, seed) => 
-{ const go = (f, seed, acc) => 
-    { const res = f(seed) return res ? go(f, res[1], acc.concat([res[0]])) : acc } 
-         return go(f, seed, [])} "></textarea>
-            </code>
+            <div class="code">
+                <code contenteditable="true" spellcheck="false" class="preview">
+const pluckDeep = key => obj => key.split('.').reduce((accum, key) =>
+accum[key], obj)
 
-        <button class="botao" type="button">Visualizar com o highlight</button>
+const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+
+const unfold = (f, seed) =>
+{ const go = (f, seed, acc) =>
+{ const res = f(seed) return res ? go(f, res[1], acc.concat([res[0]])) : acc }
+return go(f, seed, [])}
+                </code>
+            </div>
+            <button class="botao" type="button" onclick="highlight()">Visualizar com o highlight</button>
         </div>
 
         <div class="sidebar">
             <h3 class="titulo">seu projeto</h3>
             <input type="text" placeholder="Nome do seu projeto" class="input">
-            <textarea name="" id="descricao" cols="22" rows="2" placeholder="Descrição do seu projeto" class="input"></textarea>
+            <textarea id="descricao" cols="22" rows="2" placeholder="Descrição do seu projeto" class="input"></textarea>
 
             <h4 class="titulo">personalização</h4>
             <select class="seletor">
@@ -85,7 +85,7 @@ const unfold = (f, seed) =>
 
             </select>
 
-            <input type="color" id="seletorCores" value="#6BD1FF" onchange="trocaCor()">
+            <input type="color" id="seletorCores" value="#6BD1FF" onchange="changeColor()">
 
             <button class="botao" type="button">Salvar projeto</button>
         </div>
@@ -93,6 +93,7 @@ const unfold = (f, seed) =>
     </main>
     <script src="script.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 
 </html>
